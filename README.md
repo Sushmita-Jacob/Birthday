@@ -2,6 +2,7 @@
 Celebrate Heidi's birthday! Choose the gift, the cake, and the food! Then, play minigames to win cash!
 
 # Features and How to Play
+Play [here](https://trinket.io/python/f3e17aecdc1e?toggleCode=true).
 - Choose Heidi's gift, cake specifics, snacks, drinks, and poster by typing A, B, or C corresponding to the option and pressing enter to continue.
 - Guess Heidi's age by typing in any integer and pressing enter.
 - Sing "Happy Birthday" by pressing enter after each line.
