@@ -1,5 +1,6 @@
 # Description
 Celebrate Heidi's birthday! Choose the gift, the cake, and the food! Then, play minigames to win cash!
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
 
 # Features and How to Play
 Play [here](https://trinket.io/python/f3e17aecdc1e?toggleCode=true).
