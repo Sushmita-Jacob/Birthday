@@ -1,13 +1,29 @@
 # Introduction
+# \033[1m to start, \033[0m to end
+import time
+from colorama import Fore, init
+init(autoreset = True)
 money = 100
 points = 0
 guessAge = 0
 guessCup = ""
 guessBalloon = ""
-print("You are planning a birthday party for your friend, Heidi! You have $100 to spend. Make sure not to go into debt!")
+
+def slowtypewriter(text):
+    for letter in text:
+        print(letter, end="", flush=True)
+        time.sleep(0.08)
+
+def fasttypewriter(text):
+    for letter in text:
+        print(letter, end="", flush=True)
+        time.sleep(0.025)
+
+
+slowtypewriter("You are planning a birthday party for your friend, Heidi! You have $100 to spend. Make sure not to go into debt!")
 
 # Buy a gift
-print("First, what will be your gift?")
+print("\nFirst, what will be your gift?")
 gift = ""
 while gift != "A" and gift != "a" and gift != "B" and gift != "b" and gift != "C" and gift != "c":
     gift = input("(A) A coin purse - $10\n(B) A set of armor - $50\n(C) A candle - $5\nYour choice: ")
@@ -15,34 +31,34 @@ while gift != "A" and gift != "a" and gift != "B" and gift != "b" and gift != "C
         money = money - 10
         points = points + 15
         print("Heidi loved the new coin purse! It looks just like him.")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
-            print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
+            print(Fore.RED + "*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
-            print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+15)")
+            print(Fore.RED + "*You're in debt! You can keep playing, but next year try to stay in the budget!*")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+15)")
         break
     elif gift == "B" or gift == "b":
         money = money - 50
         points = points + 5
         print("The armor couldn't fit... but it was shiny!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+5)")
         break
     elif gift == "C" or gift == "c":
         money = money - 5
         points = points - 10
         print("Ouch! Heidi burnt his tail.")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print ("Heidi happiness: " + str(points) + " (-10)")
+        print (Fore.BLUE + "Heidi happiness: " + str(points) + " (-10)")
         break
     else:
         print("Hmm... that doesn't look like an option. Try again!")
@@ -56,34 +72,34 @@ while cakeSize != "A" and cakeSize != "a" and cakeSize != "B" and cakeSize != "b
         money = money - 5
         points = points - 5
         print("A little too small for a party...")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (-5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (-5)")
         break
     elif cakeSize == "B" or cakeSize == "b":
         money = money - 10
         points = points + 5
         print("Perfect! Just the right amount for everyone plus some leftovers.")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next time try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+5)")
         break
     elif cakeSize == "C" or cakeSize == "c":
         money = money - 15
         points = points - 5
         print("Too much cake! Some of it had to be fed to the racoons...")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (-5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (-5)")
         break
     else:
         print("Hmm... that doesn't look like an option. Try again!")
@@ -96,34 +112,34 @@ while cakeFlavor != "A" and cakeFlavor != "a" and cakeFlavor != "B" and cakeFlav
         money = money - 10
         points = points - 5
         print("The cake was dry and pretty boring. Spice it up with frosting!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (-5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (-5)")
         break
     elif cakeFlavor == "B" or cakeFlavor == "b":
         money = money - 15
         points = points + 10
         print("Heidi loves chocolate! Yummy!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness " + str(points) + " (+10)")
+        print(Fore.BLUE + "Heidi happiness " + str(points) + " (+10)")
         break
     elif cakeFlavor == "C" or cakeFlavor == "c":
         money = money - 20
         points = points + 5
         print("So many pretty colors!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+5)")
         break
     else:
         print("Hmm... that doesn't look like an option. Try again!")
@@ -136,34 +152,34 @@ while frostingFlavor != "A" and frostingFlavor != "a" and frostingFlavor != "B" 
         money = money - 0
         points = points + 0
         print("Frosting is overrated anyway!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print ("Heidi happiness: " + str(points) + " (no change)")
+        print (Fore.BLUE + "Heidi happiness: " + str(points) + " (no change)")
         break
     elif frostingFlavor == "B" or frostingFlavor == "b":
         money = money - 5
         points = points + 5
         print("Vanilla's always a classic!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+5)")
         break
     elif frostingFlavor == "C" or frostingFlavor == "c":
         money = money - 10
         points = points + 10
         print("Cream cheese is Heidi's favorite! How'd you know?")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+10)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+10)")
         break
     else:
         print("Hmm... that doesn't look like an option. Try again!")
@@ -176,34 +192,34 @@ while addOns != "A" and addOns != "a" and addOns != "B" and addOns != "b" and ad
         money = money - 0
         points = points + 0
         print("Keeping it basic...")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (no change)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (no change)")
         break
     elif addOns == "B" or addOns == "b":
         money = money - 5
         points = points + 5
         print("So chocolately! Milk, dark, and white!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+5)")
         break
     elif addOns == "C" or addOns == "c":
         money = money - 5
         points = points + 5
         print("Sprinkle the sprinkles!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" +str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+5)")
         break
     else:
         print("Hmm... that doesn't look like an option. Try again!")
@@ -217,34 +233,34 @@ while snacks != "A" and snacks != "a" and snacks != "B" and snacks != "b" and sn
         money = money - 5
         points = points + 10
         print("Chips and cake go so well together!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+10)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+10)")
         break
     elif snacks == "B" or snacks == "b":
         money = money - 5
         points = points - 10
         print("You already have cake - sweet cookies will give you a bellyache!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (-10)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (-10)")
         break
     elif snacks == "C" or snacks == "c":
         money = money - 5
         points = points - 5
         print("Heidi could choke on popcorn! Irresponsible!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (-5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (-5)")
         break
     else:
         print("Hmm... that doesn't look like an option. Try again!")
@@ -257,34 +273,34 @@ while drinks != "A" and drinks != "a" and drinks != "B" and drinks != "b" and dr
         money = money - 0
         points = points + 5
         print("Heidi needs to stay hydrated! Great thinking!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+5)")
         break
     elif drinks == "B" or drinks == "b":
         money = money - 5
         points = points + 5
         print("So many juice varieties! Apple, orange, lemonade, punch...")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+5)")
         break
     elif drinks == "C" or drinks == "c":
         money = money - 10
         points = points - 5
         print("Heidi doesn't like soda. Too fizzy!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (-5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (-5)")
         break
     else:
         print("Hmm... that doesn't look like an option. Try again!")
@@ -298,33 +314,33 @@ while balloons != "A" and balloons != "a" and balloons != "B" and balloons != "b
         money = money - 0
         points = points + 10
         print("Heidi's favorite color is black! Yay!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+10)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+10)")
         break
     elif balloons == "B" or balloons == "b":
         money = money - 0
         points = points + 5
         print("Heidi likes red! Matches the color of roses")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+5)")
     elif balloons == "C" or balloons == "c":
         money = money - 0
         points = points - 5
         print("Heidi hates green! It looks like grass. Yuck!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (-5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (-5)")
     else:
         print("Hmm... that doesn't look like an option. Try again!")
 
@@ -336,32 +352,32 @@ while poster != "A" and poster != "a" and poster != "B" and poster != "b" and po
         money = money - 5
         points = points - 10
         print("Trying to be nonchalant won't impress Heidi.")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (-10)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (-10)")
     elif poster == "B" or poster == "b":
         money = money - 10
         points = points + 15
         print("Heidi found it hilarious! Good job!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (+15)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (+15)")
     elif poster == "C" or poster == "c":
         money = money - 0
         points = points - 5
         print("Heidi's a little disappointed by the lack of effort... try to personalize it!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         if money < 20 and money > 0:
             print("*Be careful! You only have $" + str(money) + " left! Don't go into debt!*")
         if money < 0:
             print("*You're in debt! You can keep playing, but next year try to stay in the budget!*")
-        print("Heidi happiness: " + str(points) + " (-5)")
+        print(Fore.BLUE + "Heidi happiness: " + str(points) + " (-5)")
     else:
         print("Hmm... that doesn't look like an option. Try again!")
 
@@ -376,7 +392,7 @@ while guessAge != 20:
     if guessAge == 20:
         money = money + 10
         print("You did it! Here's your $10!")
-        print("Cash left: $" + str(money))
+        print(Fore.GREEN + "Cash left: $" + str(money))
         break
 
 #Sing happy birthday
@@ -387,29 +403,26 @@ input("Happy birthday, dear Heidi,")
 input("Happy birthday to you!")
 
 # Watch Heidi blow out the candles
-candlesOne = "tttt"
-candlesTwo = "tttt"
-candlesThree = "tttt"
-candlesFour = "tttt"
-candlesFive = "tttt"
-
-print("\n" + candlesOne + candlesTwo + candlesThree + candlesFour + candlesFive)
+candlesLit = False
+candles = ['tttt', 'tttt', 'tttt', 'tttt', 'tttt']
+print("tttttttttttttttt")
 print("Look at how bright the birthday candles shine on the cake! Hype up Heidi as he blows them out!")
 blow = input("Type 'blow' to blow out the flames. ")
-if blow == "blow":
-    print(candlesOne + candlesTwo + candlesThree + candlesFour)
-    blow = ""
+print("tttttttttttttttt")
+
+
+
 blow = input("Keep going! Type out 'blow': ")
 if blow == "blow":
-    print(candlesOne + candlesTwo + candlesThree)
+    print("tttttttttttt")
     blow = ""
 blow = input("Almost halfway there! Type out 'blow': ")
 if blow == "blow":
-    print(candlesOne + candlesTwo)
+    print("tttttttt")
     blow = ""
 blow = input("Just a few more! Type out 'blow': ")
 if blow == "blow":
-    print(candlesOne)
+    print("tttt")
     blow = ""
 blow = input("Only one more set of candles left! Type out 'blow' one last time! ")
 if blow == "blow":
@@ -506,8 +519,8 @@ if points > 5:
     print("\nCongratulations! It's the end of Heidi's birthday. He loved celebrating it with you!")
 if points <= 5:
     print("\nCongratulations! It's the end of Heidi's birthday. He appreciated you spending time with him!")
-print("Heidi had " + str(points) + " happiness points today!")
-print("At the end of the day, you had $" + str(money) + "!")
+print(Fore.BLUE + "Heidi had " + str(points) + " happiness points today!")
+print(Fore.GREEN + "At the end of the day, you had $" + str(money) + "!")
 if money > 25:
     print("You're basically rich!")
 if money <= 25 and money > 0:
